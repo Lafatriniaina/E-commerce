@@ -1,0 +1,24 @@
+.theme-control-toggle-input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.theme-control-toggle-label {
+    position: relative;
+}
+
+.theme-control-toggle-label.theme-control-toggle-light {
+    display: none;
+}
+
+.feather {
+    position: absolute;
+}
+
+.nav-item {
+    width: auto;
+    &:first-child() {
+        background-color: aqua;
+    }
+}

@@ -1,0 +1,153 @@
+@import url('https://fonts.bunny.net/css?family=Nunito');
+@import 'variables';
+@import 'bootstrap';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+// @import "node_modules/font-awesome/scss/font-awesome.scss";
+
+$base-color: #0f111a;
+$default-color: #FFF;
+$icons-color: #8a94ad;
+$primary-color: #222834;
+$secondary-color: #31374a;
+$light-color: #f5f7fa;
+
+body {
+    background-color: $base-color;
+}
+
+svg {
+    color: $icons-color;
+}
+
+.navbar {
+    background-color: $secondary-color;
+}
+
+
+
+nav.row-header {
+    .search {
+        background-color: $primary-color;
+        font-size: 10px;
+        border-radius: 20px;
+        border: 1px solid $secondary-color;
+        .search-input {
+            background-color: $primary-color;
+            font-size: 15px;
+            color: $icons-color;
+            border: none;
+            :focus {
+                outline: none;
+            }
+            &:hover {
+                border: #222834;
+                border-color: none;
+            }
+            &::placeholder {
+                color: $icons-color;
+            }
+        }
+        .input-group-append, .input-group-text {
+            display: flex;
+            align-items: center;
+            background-color: $primary-color;
+            font-size: 20px;
+            border: none;
+        }
+    }
+}
+
+nav.navbar {
+    .card-body {
+        background-color: #141824;
+        .card-types {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, auto);
+            background-color: #141824;
+        }
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+    .dropdown-menu::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: #eff2f6;
+        top: -10px;
+        left: 1.5rem;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background: #141824;
+        border-radius: 0.25rem;
+        border-width: 1px 0 0 1px;
+        border-style: solid;
+        border-color: #31374a;
+        -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+        box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    }
+    .col-auto {
+        margin-left: 6%;
+    }
+    a, .btn {
+    color: $icons-color;
+    }
+    h6 {
+        color: $icons-color;
+    }
+}
+
+body.light-mode {
+    background-color: $light-color;
+    color: #000000;
+    .navbar-expand-lg, .search, .card-body, .scrollbar, .border-grey, .other-products {
+        background-color: $default-color;
+        color: $secondary-color;
+        border-color: #cfd4e0;
+        .card-types {
+            background-color: $default-color;
+            color: $secondary-color;
+        }
+        .search-input, .input-group-append, .input-group-text {
+            background-color: $default-color;
+            color: $secondary-color;
+        }
+    }
+}
+  
+body.dark-mode {
+    background-color: $base-color;
+    color: $light-color;
+    .other-products {
+        background-color: $secondary-color;
+        color: $light-color;
+    }
+}
+
+.theme-control-toggle-dark {
+    color: #7ea1f4;
+    background-color: #182951;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+  
+.theme-control-toggle-light {
+    color: #e5780b;
+    background-color: #f7edde;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.carousel.slide {
+    display: block;
+    width: 63%;
+}
