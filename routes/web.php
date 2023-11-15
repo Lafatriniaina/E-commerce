@@ -23,10 +23,10 @@ Route::get('/', function () {
 
 Route::prefix('/user')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
-    Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.post');
-    
+    Route::post('/register', [RegisteredUserController::class, 'store'])->name('auth.register');
+
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
-    Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login.post');
+    Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('auth.login');
 });
 
 require __DIR__.'/auth.php';
