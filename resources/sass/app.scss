@@ -146,8 +146,35 @@ body.dark-mode {
     border-radius: 50%;
 }
 
-
 .carousel.slide {
     display: block;
     width: 63%;
+}
+
+.cart {
+    display: none;
+    height: 100vh; 
+    width: 500px;
+    box-sizing: content-box;
+    background-color: white;
+    transform: translateX(0);
+    transition: transform 0.5s ease-out;
+    &.show {
+        display: block;
+        transform: translateX(-40%);
+    }
+    .close-cart {
+        &:focus {
+            cursor: pointer;
+        }
+    }
+}
+
+// suppression de style dans le input number
+input[type=number] {
+ -moz-appearance: textfield;
+ &::-webkit-inner-spin-button,::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+   }
 }
