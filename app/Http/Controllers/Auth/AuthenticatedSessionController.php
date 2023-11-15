@@ -20,6 +20,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         return response()->noContent();
+        // return view('auth.login');
     }
 
     /**
@@ -37,8 +38,8 @@ class AuthenticatedSessionController extends Controller
 
     }
 
-    public function create() 
+    public function create()
     {
-        return view('layouts.login');
+        return view('auth.login');
     }
 }
