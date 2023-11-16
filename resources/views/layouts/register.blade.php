@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('base')
 
 @section('title', 'Register')
 
@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-12">
-                    <label for "firstname" class="form-label">First Name:</label>
+                    <label for="firstname" class="form-label">First Name:</label>
                     <input type="text" class="form-control" id="firstname" name="firstname" value="{{ old('firstname') }}" required>
                 </div>
             </div>
