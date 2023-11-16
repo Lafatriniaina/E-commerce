@@ -11,6 +11,7 @@ class Products extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public $softDelete = false;
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -20,13 +21,4 @@ class Products extends Model
         'timestamp'
     ];
 
-//    public function create()
-//    {
-//        $product = new Products();
-//        $product->categories = 'Category 1';
-//        $product->qualities = 'Quality 1';
-//        $product->contents = 'Product contents';
-//        $product->prices = 10.99;
-//        $product->save();
-//    }
 }
