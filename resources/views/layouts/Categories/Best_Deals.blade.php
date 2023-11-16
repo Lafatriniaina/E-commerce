@@ -1,3 +1,10 @@
+{{-- @php
+    $params = [
+        'name' => $products->name, 
+        'price' => $products->price
+    ]
+@endphp --}}
+
 <div class="mb-2 mt-5">
     <div class="d-flex justify-content-between mb-3">
       <h3>Nos meilleurs offres</h3>
@@ -9,12 +16,49 @@
         </button>
     </div>
 
-    <div class="categories-lists container">
-        <div class="row overflow-x-auto" style="height: 325px;">
-            <div class="col-lg-2 col-md-4 col-sm-2 m-2 border border-1 rounded-3 border-grey">
+    <div class="categories-lists container-fluid position-relative">
+        <div class="d-flex overflow-x-auto" style="height: 350px;">
+
+            <button id="leftArrow" class="position-absolute border-0 ms-5" style="width: 40px; height: 40px; border-radius: 50%; top: 45%; left: 0; display: block; transition: all 0.5s ease;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            @foreach ($products as $product)
+            <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey" onclick="window.location.href='{{ route('description', ['name' => $product->name]) }}';">
+                <img class="h-50 m-2 rounded" src="{{ asset($product->image) }}" alt="First image" style="width: 92%;">
+                <p class="mt-3 mx-4 font-weight-bold">{{ $product->name }}</p>
+                <div class="d-flex justify-content-around">
+                    <p class="price text-success font-weight-bold">{{ $product->prices }}$</p>
+                    <p class="price text-primary font-weight-bold">125 pièces</p>
+                </div>
+                <div class="mt-2 d-flex justify-content-around">
+                    <div class="Adding-to-pannier">
+                        <button class="btn btn-primary">Ajouter au pannier</button>
+                    </div>
+                    <div class="heart-love d-flex align-items-center justify-content-center rounded p-3 border-lg border-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="feather feather-heart text-dark text-700" style="height:30px;width:30px;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>                         
+                    </div>                     
+                </div>
+            </div>
+            @endforeach
+
+            <button id="rightArrow" class="position-absolute border-0 me-5" style="width: 40px; height: 40px; border-radius: 50%; top: 45%; right: 0; display: block; transition: all 0.5s ease;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>                
+             </button>
+
+            {{-- <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey">
                 <img class="h-50 w-100 mt-2 rounded" src="{{ asset('images/vetements/ensemble_debardeur_72_80.jpg') }}" alt="First image">
                 <p class="mt-3">Categories title</p>
-                <div class="price text-success font-weight-bold">12.000 Ar</div>
+                <div class="d-flex justify-content-between">
+                    <p class="price text-success font-weight-bold">12.000 Ar</p>
+                    <p class="price text-primary font-weight-bold">125 pièces</p>
+                </div>
                 <div class="mt-2 d-flex justify-content-around">
                     <div class="Adding-to-pannier">
                         <button class="btn btn-primary">Ajouter au pannier</button>
@@ -27,10 +71,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-4 col-sm-2 m-2 border border-1 rounded-3 border-grey">
+            <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey">
                 <img class="h-50 w-100 mt-2 rounded" src="{{ asset('images/vetements/ensemble_debardeur_72_80.jpg') }}" alt="First image">
                 <p class="mt-3">Categories title</p>
-                <div class="price text-success font-weight-bold">12.000 Ar</div>
+                <div class="d-flex justify-content-between">
+                    <p class="price text-success font-weight-bold">12.000 Ar</p>
+                    <p class="price text-primary font-weight-bold">125 pièces</p>
+                </div>
                 <div class="mt-2 d-flex justify-content-around">
                     <div class="Adding-to-pannier">
                         <button class="btn btn-primary">Ajouter au pannier</button>
@@ -43,10 +90,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-4 col-sm-2 m-2 border border-1 rounded-3 border-grey">
+            <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey">
                 <img class="h-50 w-100 mt-2 rounded" src="{{ asset('images/vetements/ensemble_debardeur_72_80.jpg') }}" alt="First image">
                 <p class="mt-3">Categories title</p>
-                <div class="price text-success font-weight-bold">12.000 Ar</div>
+                <div class="d-flex justify-content-between">
+                    <p class="price text-success font-weight-bold">12.000 Ar</p>
+                    <p class="price text-primary font-weight-bold">125 pièces</p>
+                </div>
                 <div class="mt-2 d-flex justify-content-around">
                     <div class="Adding-to-pannier">
                         <button class="btn btn-primary">Ajouter au pannier</button>
@@ -59,10 +109,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-4 col-sm-2 m-2 border border-1 rounded-3 border-grey">
+            <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey">
                 <img class="h-50 w-100 mt-2 rounded" src="{{ asset('images/vetements/ensemble_debardeur_72_80.jpg') }}" alt="First image">
                 <p class="mt-3">Categories title</p>
-                <div class="price text-success font-weight-bold">12.000 Ar</div>
+                <div class="d-flex justify-content-between">
+                    <p class="price text-success font-weight-bold">12.000 Ar</p>
+                    <p class="price text-primary font-weight-bold">125 pièces</p>
+                </div>
                 <div class="mt-2 d-flex justify-content-around">
                     <div class="Adding-to-pannier">
                         <button class="btn btn-primary">Ajouter au pannier</button>
@@ -73,23 +126,7 @@
                         </svg>                         
                     </div>                     
                 </div>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-2 m-2 border border-1 rounded-3 border-grey">
-                <img class="h-50 w-100 mt-2 rounded" src="{{ asset('images/vetements/ensemble_debardeur_72_80.jpg') }}" alt="First image">
-                <p class="mt-3">Categories title</p>
-                <div class="price text-success font-weight-bold">12.000 Ar</div>
-                <div class="mt-2 d-flex justify-content-around">
-                    <div class="Adding-to-pannier">
-                        <button class="btn btn-primary">Ajouter au pannier</button>
-                    </div>
-                    <div class="heart-love d-flex align-items-center justify-content-center rounded p-3 border-lg border-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="feather feather-heart text-dark text-700" style="height:30px;width:30px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                        </svg>                         
-                    </div>                     
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
