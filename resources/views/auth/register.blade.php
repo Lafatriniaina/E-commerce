@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <form method="POST" action="{{ route('register') }}" class="my-custom-form p-4 border rounded bg-light" style="width: 70%; margin: 0 auto;">
+        <form method="POST" action="{{ route('auth.register') }}" class="my-custom-form p-4 border rounded bg-light" style="width: 70%; margin: 0 auto;">
             @csrf
 
             <div class="row">
