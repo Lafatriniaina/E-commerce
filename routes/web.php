@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 
 Route::prefix('/user')->group(function () {
-    Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('/register', [RegisteredUserController::class, 'store'])->name('auth.register');
+    Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('auth.login');
@@ -28,6 +28,11 @@ Route::prefix('/user')->group(function () {
     Route::get('/description/{name}/', function () {
         return view('layouts.Description');
     })->name('description');
+
+    Route::get('/dashboard', function () {
+        return view('layouts.Dashboard');
+    })->name('dashboard');
+
 });
 
 require __DIR__.'/auth.php';
