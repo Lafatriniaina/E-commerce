@@ -1,7 +1,7 @@
 <nav class="row row-header container-fluid d-flex m-3 justify-content-between">
 
-  <div class="col-2 logo text-semibold text-light">
-    E-commerce
+  <div class="col-2 logo text-semibold">
+    <img src="{{ asset('images/logo.png') }}" alt="logo" style="width: 60px;" >
   </div>
 
   <div class="col-5 mx-3 search d-flex justify-content-center border-2">
@@ -41,7 +41,6 @@
           </label>
         </div>
       </li>
-
       <li class="nav-item me-3 flex">
         <a class="nav-link px-2 icon-indicator icon-indicator-primary position-relative" href="#" role="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart text-700" style="height:20px;width:20px;">
@@ -63,6 +62,15 @@
         </a>
       </li>&nbsp;&nbsp;
 
+      <li class="nav-item me-3 flex">
+        <a class="nav-link px-2 icon-indicator icon-indicator-sm icon-indicator-danger position-relative" id="navbarTopDropdownNotification" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="feather feather-heart text-700" style="height:20px;width:20px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>          
+          <span class="icon-indicator-number bg-primary rounded-circle text-light d-flex justify-content-center align-items-center position-absolute" style="top: 0; right: -150%; width: 15px; height: 15px;">0</span>
+        </a>
+      </li>&nbsp;&nbsp;
+
       {{-- @if (auth()->check())
       <li class="nav-item me-3 flex">
         <img src="{{ asset('images/Capture.PNG') }}" alt="profil" class="rounded-lg" />
@@ -78,6 +86,8 @@
       </li>
       {{-- @endif --}}
     </ul>
+    @include('fragments.Carts')
+
   </div>
 
 </nav>
