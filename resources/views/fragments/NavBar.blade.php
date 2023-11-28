@@ -232,9 +232,6 @@
           <a class="nav-link" href="#">Listes des souhaits</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Information d'expedition</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#">Soyez un vendeur</a>
         </li>
         <li class="nav-item">
