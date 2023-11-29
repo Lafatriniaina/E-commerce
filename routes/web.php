@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\DescriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,7 @@ Route::prefix('/user')->group(function () {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
     Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('auth.login');
 
-    Route::get('/description/{name}/', function () {
-        return view('layouts.Description');
-    })->name('description');
+    Route::get('/description/{name}/{categories}/{prices}/{quantities}/{contents}',  [DescriptionController::class, 'someMethod' ])->name('description');
 
     Route::get('/dashboard', function () {
         return view('layouts.Dashboard');
