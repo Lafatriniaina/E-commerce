@@ -2,17 +2,18 @@
 
 @section('title', 'Description')
 
+@include('fragments.NavBar')
+
 @section('content')
 
         <div class="d-flex description p-5 my-5" style="width: 100vw; height: 80vh;">
             <div class="d-flex" style="width: 50%; height: 500px;">
-                <img src="{{ asset('images/chaussures/sandale_en_cuir.jpg') }}" alt="" style="width: auto; height: auto;">
+                <img src="{{ asset($product->image) }}" alt="" style="width: auto; height: auto;">
             </div>
             <div class="description-lists overflow-auto">
-                <h3>Chaussure sandale Cuire</h3>
-                <p>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Maiores, <br> harum, ipsam illo consequuntur <br> inventore quae libero dolor </p>
-                <p>Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Maiores, <br> harum, ipsam illo consequuntur <br> inventore quae libero dolor </p>
-                <p class="price text-success font-weight-bold">500 000 Ariary</p>
+                <h3>{{ $product->name }}</h3>
+                <p class="ms-4">{!! $product->contents !!}</p>
+                <p class="price ms-4 text-success font-weight-bold">{{ $product->prices }} $</p>
                 <div class="d-flex px-5">
                     <div class="form-outline d-flex mx-2" style="width: 90px; height: 40px;">
                         <button class="decrement btn btn-primary mx-1">-</button>
@@ -57,4 +58,8 @@
             </div>
         </div>
 
+@endsection
+
+@section('footer')
+   @include('fragments.Footer')
 @endsection
