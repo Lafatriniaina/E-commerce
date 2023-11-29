@@ -14,14 +14,12 @@ class DescriptionController extends Controller
         $prices = $request->route('prices');
         $quantities = $request->route('quantities');
         $contents = $request->route('contents');
-        // $image = $request->route('image');
 
         $product = Products::where('name', $name)
             ->where('categories', $categories)
             ->where('prices', $prices)
             ->where('quantities', $quantities)
             ->where('contents', $contents)
-            // ->where('image', $image)
             ->first();
 
         $contentsArray = explode(' ', $product->contents);
