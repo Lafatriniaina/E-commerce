@@ -110,13 +110,13 @@
               <div class="col-lg-12 col-sm-6 col-md-4 pe-5 m-4">
                 <div class="d-flex align-items-center mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pocket text-primary me-2" style="stroke-width:3;"><path d="M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z"></path><polyline points="8 10 12 14 16 10"></polyline></svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Collectibles &amp; Art</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Vêtements</h6>
                 </div>
                 <div class="ms-n2">
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Collectibles</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Antiques</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Sports memorabilia </a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Art</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Combinaisons</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Pentalons</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">T-Shirt</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Robes</a>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                   </svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Home &amp; Gardan</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Home &amp; Gardan</h6>
                 </div>
                 <div class="ms-n2">
                   <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Yard, Garden &amp; Outdoor</a>
@@ -143,13 +143,13 @@
                     <line x1="2" y1="12" x2="22" y2="12"></line>
                     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                   </svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Sporting Goods</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Cuisiniers</h6>
                 </div>
                 <div class="ms-n2">
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Outdoor Sports</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Team Sports</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Exercise &amp; Fitness</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Golf</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Rice cookers</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Marmites</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Poêles</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Inductions</a>
                 </div>
               </div>
 
@@ -160,13 +160,13 @@
                     <line x1="8" y1="21" x2="16" y2="21"></line>
                     <line x1="12" y1="17" x2="12" y2="21"></line>
                   </svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Electronics</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Electroniques</h6>
                 </div>
                 <div class="ms-n2">
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Computers &amp; Tablets</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Camera &amp; Photo</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">SmartPhones</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Appareil Photo</a>
                   <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">TV, Audio &amp; Surveillance</a>
-                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Cell Ohone &amp; Accessories</a>
+                  <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Ordinateurs &amp; Accessories</a>
                 </div>
               </div>
 
@@ -177,7 +177,7 @@
                     <line x1="8" y1="21" x2="16" y2="21"></line>
                     <line x1="12" y1="17" x2="12" y2="21"></line>
                   </svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Electronics</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Electronics</h6>
                 </div>
                 <div class="ms-n2">
                   <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Computers &amp; Tablets</a>
@@ -193,7 +193,7 @@
                     <circle cx="6" cy="18" r="3"></circle>
                     <circle cx="18" cy="16" r="3"></circle>
                   </svg>
-                  <h6 class="text-1000 mb-0 text-nowrap">Musical Instruments &amp; Gear</h6>
+                  <h6 class="text-1000 mb-0 text-nowrap ms-4">Musical Instruments &amp; Gear</h6>
                 </div>
                 <div class="ms-n2">
                   <a class="d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2" href="#!">Guitar</a>
@@ -206,8 +206,15 @@
             </div>
 
             <div class="text-center border-top pt-3">
-              <a class="fw-bold" href="#!">See all Categories<svg class="svg-inline--fa fa-angle-right ms-1" data-fa-transform="down-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="transform-origin: 0.25em 0.5625em;"><g transform="translate(128 256)"><g transform="translate(0, 32)  scale(1, 1)  rotate(0 0 0)">
-                <path fill="currentColor" d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" transform="translate(-128 -256)"></path></g></g></svg><!-- <span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span> Font Awesome fontawesome.com -->
+              <a class="fw-bold" href="#!">
+                Voir toutes les Categories
+                <svg class="svg-inline--fa fa-angle-right ms-1" data-fa-transform="down-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="transform-origin: 0.25em 0.5625em;">
+                  <g transform="translate(128 256)">
+                    <g transform="translate(0, 32)  scale(1, 1)  rotate(0 0 0)">
+                      <path fill="currentColor" d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" transform="translate(-128 -256)"></path>
+                    </g>
+                  </g>
+                </svg>
               </a>
             </div>
 
