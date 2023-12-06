@@ -154,7 +154,7 @@ body.dark-mode {
 
 .cart {
     display: none;
-    height: 100vh; 
+    height: auto; 
     width: 500px;
     box-sizing: content-box;
     background-color: white;
@@ -162,7 +162,7 @@ body.dark-mode {
     transition: transform 0.5s ease-out;
     &.show {
         display: block;
-        transform: translateX(-40%);
+        transform: translateX(-44%);
     }
     .close-cart {
         &:focus {
