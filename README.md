@@ -19,7 +19,7 @@ A e-commerce website created using the <a href="https://laravel.com/docs/10.x">L
 ## Database
 
 A e-commerce website uses <a href="https://www.sqlite.org/docs.html">SQLite</a> to manage database.
-To introduce it type the command: `php artisan migrate` and follow the steps. 
+To introduce it type the command: `php artisan migrate` and follow the steps. Then `php artisan db:seed` to include the fake data in the database. 
 
 ## Laravel Sponsors
 
