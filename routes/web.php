@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\DescriptionController;
 use \App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductsFiltered;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,15 @@ use \App\Http\Controllers\CartController;
 |
 */
 
-Route::get('/', [ProductsController::class, 'index'])->name('home');
-Route::post('/', [ProductsController::class, 'addToCart'])->name('home');
-// Route::delete('/{id}', [CartController::class, 'removeFromCart'])->name('remove');
+Route::prefix('/')->group(function() {
+    Route::get('/', [ProductsController::class, 'index'])->name('home');
+    Route::post('/', [CartController::class, 'addToCart'])->name('home');
+});
+
+Route::prefix('/cart')->group(function() {
+    Route::get('/count', 'CartController@count')->name('cart.count');
+    Route::delete('/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+});
 
 Route::prefix('/user')->group(function () {
     Route::post('/register', [RegisteredUserController::class, 'store'])->name('auth.register');
