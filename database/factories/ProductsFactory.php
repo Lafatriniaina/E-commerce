@@ -19,7 +19,7 @@ class ProductsFactory extends Factory
      */
     public function definition(): array
     {
-        $categories = ['vetements', 'robes', 'electronics', 'meubles', 'cuisiniers', 'chaussures', 'jeu_video'];
+        $categories = ['vetements', 'robes', 'electronics', 'meubles', 'cuisiniers', 'chaussures', 'jeu_video', 'costards'];
         $category = $this->faker->randomElement($categories);
         $images = glob(public_path('images/'.$category.'/*'));
 
