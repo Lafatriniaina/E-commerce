@@ -7,24 +7,83 @@
             </svg>
         </button>
     </div><hr>
-    @foreach(session('cart') as $id => $details)
-        <div class="d-flex my-3 align-items-center justify-content-around me-4" style="width: 100%;" role="button" >
-            <div class="image d-flex align-items-center w-50">
-                <img src="{{ asset($details['image']) }}" alt="images" style="width: 100px; height: 100px;">
-                <div class="content mx-4">
-                    <p class="categories">{{ $details['name'] }}</p>
-                    <p class="price">{{ $details['price'] }} $</p>
+    @if(is_array(session('cart')) && !empty(session('cart')))
+        @foreach(session('cart') as $id => $details)
+            <div class="d-flex my-3 align-items-center justify-content-around me-4" style="width: 100%;" role="button" >
+                <div class="image d-flex align-items-center w-50">
+                    <img src="{{ asset($details['image']) }}" alt="images" style="width: 100px; height: 100px;">
+                    <div class="content mx-4">
+                        <p class="categories">{{ $details['name'] }}</p>
+                        <p class="price">{{ $details['price'] }} $</p>
+                    </div>
+                    <meta name="csrf-token" content="{{ csrf_token() }}">
                 </div>
+                <div class="form-outline d-flex" style="width: 90px; height: 40px;">
+                    <button class="decrement btn btn-primary mx-1">-</button>
+                    <input type="number" class="quantity form-control" style="width: 40px; height: 40px; font-size: 20px;" value="{{ $details['quantity'] }}"/>
+                    <button class="increment btn btn-primary mx-1">+</button>
+                </div>
+                    <svg data-id="{{ $id }}" data-image="{{ $details['image'] }}" role="button" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="delete-product text-danger" style="width: 40px; height: 40px;">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                    </svg>
             </div>
-            <div class="form-outline d-flex" style="width: 90px; height: 40px;">
-                <button class="decrement btn btn-primary mx-1">-</button>
-                <input type="number" class="quantity form-control" style="width: 40px; height: 40px; font-size: 20px;" value="{{ $details['quantity'] }}"/>
-                <button class="increment btn btn-primary mx-1">+</button>
-            </div>
-                <svg data-image="{{ $details['image'] }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="delete-product text-danger" style="width: 40px; height: 40px;">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
-                </svg>
-        </div>
-    @endforeach
+        @endforeach
+    @endif
 </div>
     
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.delete-product').forEach(function(element) {
+            element.addEventListener('click', function() {
+                var productId = this.getAttribute('data-id');
+                var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                updateCartCount();
+                fetch('/cart/' + productId, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,
+                    },
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    this.parentNode.parentNode.remove();
+                    console.log('cart supprimé')
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+
+        document.querySelectorAll('.form').forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                updateCartCount();
+            });
+        });
+
+        // document.querySelectorAll('.add-to-cart').forEach(function(countCart) {
+        //     countCart.addEventListener('submit', (e) => {
+        //         e.preventDefault();
+        //         console.log("cart ajouté");
+        //         updateCartCount();
+        //     })
+        // })
+    });
+
+function updateCartCount() {
+    fetch('/cart/count')
+        .then(response => response.json())
+        .then((data) => {
+            const cartCount = document.getElementById('cartCount');
+            cartCount.innerText = data.count;
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+</script>
