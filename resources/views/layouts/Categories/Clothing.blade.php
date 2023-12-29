@@ -1,6 +1,6 @@
 <div class="mb-2 mt-5">
     <div class="d-flex justify-content-between mb-3">
-      <h3>Nos meilleurs offres</h3>
+      <h3>Catégories: Vêtements</h3>
         <button class="other-products fw-bold d-none d-md-block rounded border-0 px-5" href="#!">
             Voir plus
             <svg class="svg-inline--fa fa-chevron-right fs--1 ms-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
@@ -18,7 +18,7 @@
                 </svg>
             </button>
 
-            @foreach ($products as $product)
+            @foreach ($clothingProducts as $product)
                 <div class="col-lg-2 col-md-4 col-sm-2 mx-2 border border-1 rounded-3 border-grey" role="button" onclick="window.location.href='{{ route('description', ['name' => $product->name, 'categories' => $product->categories, 'prices' => $product->prices, 'quantities' => $product->quantities, 'contents' => $product->contents, 'image' => $product->image]) }}';">
                     <img class="h-50 m-2 rounded" src="{{ asset($product->image) }}" alt="First image" style="width: 92%;">
                     <p class="mt-3 mx-4 fw-bold">{{ $product->name }}</p>
